@@ -49,7 +49,7 @@ const Chat = () => {
             }`}
           >
             <div
-              className={`p-2 pl-5 pr-5 rounded-full max-w-xs text-wrap ${
+              className={`p-2 pl-5 pr-5 rounded-xl max-w-xs text-wrap ${
                 msg.sender === "You"
                   ? "bg-blue-500 text-white"
                   : "bg-gray-300 text-black"
