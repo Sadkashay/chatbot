@@ -5,18 +5,21 @@ import Chat from "./Chat";
 
 const ChatBot = () => {
   const [openChatBot, setOpenChatBot] = useState<boolean>(false);
+  const handleOpenChatBot = () => {
+    setOpenChatBot(!openChatBot);
+  };
   return (
     <>
-      <div className="flex flex-col items-center bg-white/80 h-full w-full text-black">
+      <div className="flex flex-col items-center bg-white/90 h-full w-full text-black">
         <h1
-          className="font-bold text-2xl p-4 pl-6 pr-6 bg-black h-fit w-fit rounded-md mt-4 text-white"
+          className="font-bold text-2xl p-4 pl-6 pr-6 bg-blue-500 h-fit w-fit rounded-md mt-4 text-white"
           style={{ boxShadow: "4px 2px 9px 2px #5D469633" }}
         >
           Chatbot Replica
         </h1>
 
         <button
-          onClick={() => setOpenChatBot(!openChatBot)}
+          onClick={handleOpenChatBot}
           className="flex flex-col p-6 justify-center items-center rounded-full h-[120px] w-[120px] bg-white/20 mt-[250px] text-wrap font-bold"
           style={{ boxShadow: "4px 2px 9px 2px #5D469633" }}
         >
@@ -24,7 +27,7 @@ const ChatBot = () => {
         </button>
       </div>
       {openChatBot ? (
-        <ChatWrapper>
+        <ChatWrapper handleOpenChatBot={handleOpenChatBot}>
           <Chat />
         </ChatWrapper>
       ) : null}

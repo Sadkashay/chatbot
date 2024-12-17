@@ -6,9 +6,10 @@ const Chat = () => {
   );
   const [input, setInput] = useState("");
   const chatEndRef = useRef<HTMLDivElement | null>(null);
+  const baseURL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3002";
 
   useEffect(() => {
-    const eventSource = new EventSource("http://localhost:5000/chat");
+    const eventSource = new EventSource(`${baseURL}/chat`);
 
     eventSource.onmessage = (event) => {
       const newMessage = JSON.parse(event.data);
@@ -24,7 +25,7 @@ const Chat = () => {
     if (input.trim() === "") return;
     setMessages((prev) => [...prev, { sender: "You", text: input }]);
 
-    await fetch("http://localhost:5000/send-message", {
+    await fetch(`${baseURL}/send-message`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: input }),
@@ -55,7 +56,7 @@ const Chat = () => {
             }`}
           >
             <div
-              className={`p-2 rounded-lg max-w-xs ${
+              className={`p-2 pl-5 pr-5 rounded-full max-w-xs ${
                 msg.sender === "You"
                   ? "bg-blue-500 text-white"
                   : "bg-gray-300 text-black"
@@ -74,7 +75,7 @@ const Chat = () => {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown} // Call sendMessage on pressing Enter
           placeholder="Type your message"
-          className="flex-1 border rounded-md p-2"
+          className="flex-1 border rounded-full p-2"
         />
       </div>
     </div>
