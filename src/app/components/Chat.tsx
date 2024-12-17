@@ -39,8 +39,8 @@ const Chat = () => {
   }, [messages]);
 
   return (
-    <div className="flex flex-col h-full bg-gray-100">
-      <div className="flex-1 overflow-y-auto p-4">
+    <div className="w-full relative flex flex-col h-full bg-gray-100 overflow-y-scroll">
+      <div className="flex-1 overflow-y-auto p-4 mb-20">
         {messages.map((msg, idx) => (
           <div
             key={idx}
@@ -61,7 +61,7 @@ const Chat = () => {
         ))}
         <div ref={chatEndRef} />
       </div>
-      <div className="p-4 bg-white flex gap-2">
+      <div className="p-4 w-full bottom-0 absolute bg-white flex gap-2 mt-4">
         <input
           type="text"
           value={input}
