@@ -20,7 +20,7 @@ const ChatBot = () => {
         <p style={{ boxShadow: "4px 2px 9px 2px #5D469633 inset" }} className="p-20 pt-14 pb-14 text-center text-xl text-blue-600 font-bold bg-gray-500/10 w-[80%] rounded-xl">
           Experience intelligent conversations with our AI-powered chatbot!
           Whether you need help, want to chat, or have questions, our virtual
-          assistant is here to assist you 24/7. It's simple, fast, and ready to
+          assistant is here to assist you 24/7. It&apos;s simple, fast, and ready to
           make your experience seamless and enjoyable. Give it a try now and let
           the conversation begin!
         </p>
