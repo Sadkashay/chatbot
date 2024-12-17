@@ -10,7 +10,7 @@ const ChatBot = () => {
   };
   return (
     <>
-      <div className="flex flex-col gap-5 items-center bg-white/90 h-full w-full text-black">
+      <div className="flex flex-col gap-5 items-center bg-white/90 min-h-screen h-fit w-full text-black p-4 pb-[30px]">
         <h1
           className="font-bold text-2xl p-4 pl-6 pr-6 bg-blue-500 h-fit w-fit rounded-md mt-4 text-white"
           style={{ boxShadow: "4px 2px 9px 2px #5D469633" }}

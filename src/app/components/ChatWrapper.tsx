@@ -7,7 +7,7 @@ interface Props {
 }
 const ChatWrapper = ({ children, handleOpenChatBot }: Props) => {
   return (
-    <div className="h-screen w-screen fixed flex justify-end bg-white/20 z-10 top-0 left-0 text-black p-2">
+    <div className="h-screen w-screen fixed flex justify-end bg-white/20 z-10 top-0 left-0 text-black p-2 ">
       <div className="bg-gray-100 w-full max-w-[380px] rounded-lg flex flex-col p-3">
         <button
           onClick={handleOpenChatBot}
