@@ -40,7 +40,7 @@ const Chat = () => {
 
   return (
     <div className="w-full relative flex flex-col h-full bg-gray-100 overflow-y-scroll">
-      <div className="flex-1 overflow-y-auto p-4 mb-20">
+      <div className="flex flex-col gap-3 overflow-y-auto p-4 mb-20">
         {messages.map((msg, idx) => (
           <div
             key={idx}
@@ -49,11 +49,12 @@ const Chat = () => {
             }`}
           >
             <div
-              className={`p-2 pl-5 pr-5 rounded-full max-w-xs ${
+              className={`p-2 pl-5 pr-5 rounded-full max-w-xs text-wrap ${
                 msg.sender === "You"
                   ? "bg-blue-500 text-white"
                   : "bg-gray-300 text-black"
               }`}
+              style={{ wordWrap: "break-word", overflowWrap: "break-word" }}
             >
               {msg.text}
             </div>
