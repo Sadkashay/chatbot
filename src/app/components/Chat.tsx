@@ -34,13 +34,6 @@ const Chat = () => {
     setInput("");
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      sendMessage();
-    }
-  };
-
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -73,10 +66,15 @@ const Chat = () => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown} // Call sendMessage on pressing Enter
           placeholder="Type your message"
           className="flex-1 border rounded-full p-2"
         />
+        <button
+          onClick={sendMessage}
+          className="bg-blue-500 text-white rounded-full px-4 py-2"
+        >
+          Send
+        </button>
       </div>
     </div>
   );
